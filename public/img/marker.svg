@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="54px" height="54px" viewBox="0 0 54 54" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <desc>Created with Lunacy</desc>
+  <g id="marker" transform="translate(1 9)">
+    <path d="M0 15C0 6.71573 6.71573 0 15 0C23.2843 0 30 6.71573 30 15C30 23.2843 23.2843 30 15 30C6.71573 30 0 23.2843 0 15Z" id="Oval-Copy" fill="#1F1F23" stroke="none" />
+    <path d="M0 8C0 3.58172 3.58172 0 8 0C12.4183 0 16 3.58172 16 8C16 10.5209 14.834 12.7694 13.0119 14.2358C11.6405 15.3395 9.8974 16 8 16C3.58172 16 0 12.4183 0 8Z" transform="translate(6.999939 7.000061)" id="Oval" fill="#00FF7F" stroke="none" />
+  </g>
+</svg>

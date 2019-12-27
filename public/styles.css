@@ -1,0 +1,31 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body {
+  margin: 0;
+  background-color: #0e0e10;
+}
+
+.custom-notif {
+  background: white;
+}
+.ui-state-error {
+  background: red;
+  text-shadow: none;
+}
+.ui-state-default {
+  background: green;
+  text-shadow: none;
+}
+.ui-state-highlight {
+  background: blue;
+  text-shadow: none;
+}
+a.activeLink {
+  color: #00ff7f !important;
+}
