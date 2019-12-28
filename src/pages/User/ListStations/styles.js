@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   width: 100%;
   margin: 0 auto;
-  padding: 85px 24px 70px 24px;
+  padding: 20px 24px 70px 24px;
   font-family: "Poppins";
 
   a {
@@ -25,7 +25,6 @@ export const Container = styled.div`
     width: 80%;
   }
 `;
-
 export const Table = styled.table`
   width: 100%;
   color: #efeff1;

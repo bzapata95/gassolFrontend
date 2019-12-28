@@ -5,6 +5,7 @@ import Main from "./pages/Main";
 import Singin from "./pages/SignIn";
 import Singup from "./pages/Signup";
 import RegisterStation from "./pages/RegisterStation";
+import UserListStations from "./pages/User/ListStations";
 
 import AdminTools from "./pages/AdminTools";
 import ListStations from "./pages/AdminTools/Stations";
@@ -36,6 +37,11 @@ export default function Routes() {
           exact
           path="/create-new-station"
           component={RegisterStation}
+        />
+        <PrivateRoute
+          exact
+          path="/contributions"
+          component={UserListStations}
         />
         <PrivateRoute
           exact

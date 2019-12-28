@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   width: 100%;
   margin: 0 auto;
-  padding: 70px 12px 10px 12px !important;
+  padding: 20px 12px 10px 12px !important;
   font-family: "Poppins";
   font-size: 12px;
   color: #efeff1;

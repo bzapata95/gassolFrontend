@@ -31,7 +31,7 @@ export const Container = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    a:last-child {
+    a {
       margin-left: 16px;
       color: #00ff7f;
       display: flex;

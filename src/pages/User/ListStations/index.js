@@ -1,26 +1,24 @@
-import React, { useEffect, useState } from "react";
-import { withRouter } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faList } from "@fortawesome/free-solid-svg-icons";
 import { toast } from "react-toastify";
 
 import api from "../../../services/api";
-import HeaderAdmin from "../../../components/HeaderAdmin";
-// import List from "../../../components/List";
-import { Container, Table, Title } from "./styles";
-import List from "../../../components/List";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faRocket } from "@fortawesome/free-solid-svg-icons";
-import ListContentLoader from "../../../components/ListContentLoader";
 
-// const formatter = buildFormatter(EsString);
+import Header from "../../../components/Header";
+import { Container, Title, Table } from "./styles";
+import ListContentLoader from "../../../components/ListContentLoaderUser";
+import List from "../../../components/ListUser";
 
-function Stations({ history }) {
+export default function ListStations() {
   const [stations, setStations] = useState([]);
-  const [initalPag, setInitalPag] = useState(1);
-  const [lastPage, setlastPage] = useState(null);
   const [fillStations, setFillStations] = useState(false);
-  async function isAdmin(pageNumber = initalPag) {
+  const [lastPage, setlastPage] = useState(null);
+  const [initalPag, setInitalPag] = useState(1);
+
+  async function getStations(pageNumber = initalPag) {
     try {
-      const { data } = await api.get("/listStations", {
+      const { data } = await api.get("/stations", {
         params: {
           page: pageNumber
         }
@@ -35,29 +33,28 @@ function Stations({ history }) {
     } catch (e) {
       if (e.response && e.response.data && e.response.status === 401) {
         toast.error(`🚫${e.response.data.message}`);
-        history.push("/");
       }
     }
   }
 
   useEffect(() => {
-    isAdmin();
+    getStations();
   }, []);
 
   const LoadMore = () => {
     setInitalPag(initalPag + 1);
-    isAdmin();
+    getStations();
   };
   return (
     <>
-      <HeaderAdmin />
+      <Header />
       <Container>
         <Title>
           <FontAwesomeIcon
-            icon={faRocket}
+            icon={faList}
             style={{ color: "00ff7f", fontSize: "35px" }}
           />{" "}
-          Record of stations
+          Tus aportes
         </Title>
         {fillStations === false ? (
           <ListContentLoader />
@@ -66,13 +63,11 @@ function Stations({ history }) {
             <Table>
               <thead>
                 <tr>
-                  <th>Name</th>
-                  <th>Reference</th>
-                  <th>Prices</th>
-                  <th>View</th>
-                  <th>Status</th>
-                  <th>Created</th>
-                  <th>Acctions</th>
+                  <th>Nombre</th>
+                  {/* <th>Rerefencia</th> */}
+                  <th>Precios</th>
+                  <th>Estado</th>
+                  <th>Acciones</th>
                 </tr>
               </thead>
               <tbody>
@@ -92,5 +87,3 @@ function Stations({ history }) {
     </>
   );
 }
-
-export default withRouter(Stations);

@@ -2,7 +2,7 @@ import React from "react";
 import { Link, withRouter, NavLink } from "react-router-dom";
 import { Nav, Container } from "./styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTint, faPlusSquare } from "@fortawesome/free-solid-svg-icons";
+import { faTint } from "@fortawesome/free-solid-svg-icons";
 
 import { isAuthenticated, logout } from "../../services/auth";
 
@@ -28,11 +28,10 @@ function Header({ history }) {
           </div>
           <div>
             <NavLink to="/create-new-station" activeClassName="activeLink">
-              <FontAwesomeIcon
-                icon={faPlusSquare}
-                style={{ color: "00ff7f", fontSize: "20" }}
-              ></FontAwesomeIcon>
               Agregar
+            </NavLink>
+            <NavLink to="/contributions" activeClassName="activeLink">
+              Listado
             </NavLink>
             {/* <p>{isAuthenticated().name}</p> */}
             <a href="#!" onClick={logOUT}>
